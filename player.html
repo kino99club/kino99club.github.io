@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.7.3/video-js.min.css" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142458685-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-142458685-1');
+  </script>
+  <script async="async" data-cfasync="false" src="//upgulpinon.com/1?z=4398856"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>KINO Player</title>
+  <link data-n-head="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Montserrat" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142458685-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-142458685-1');
+  </script>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      padding: 0px;
+      font-family: Fira Sans Condensed, sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-dark">
+  <div class="container w-100">
+    <div class="row">
+    </div>
+    <div class="row">
+      <video id="my-player" class="video-js vjs-big-play-centered w-100" controls preload="auto" data-setup='{}'>
+        <source src="https://cdn.kino99.club/altan-tsetserleg/altan-tsetserleg-1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="row bg-secondary p-3 text-center">
+      <div class="col-4">
+        <?php
+        if ($id[2] > 1) {
+          echo '<a href="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $um . '" style="color:white;"><i class="fas fa-angle-double-left"></i> Өмнөх анги</a>';
+        }
+        ?>
+      </div>
+      <div class="col-4">
+        <select onchange="location = this.value;">
+          <?php
+          for ($x = 1; $x < $id[2]; $x++) {
+            echo '<option value="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $x . '">' . $x . '</option>';
+          }
+          echo '<option value="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $id[2] . '" selected="selected">' . $id[2] . '</option>';
+          for ($x = $x + 1; $x <= $show['0']['shep']; $x++) {
+            echo '<option value="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $x . '">' . $x . '</option>';
+          }
+          ?>
+        </select>
+        / <?php echo $show['0']['shep']; ?>
+      </div>
+      <div class="col-4">
+        <?php
+        if ($id[2] < $show['0']['shep']) {
+          echo '<a href="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $da . '" style="color:white;">Дараагийн анги <i class="fas fa-angle-double-right"></i> </a>';
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.7.3/video.min.js"></script>
+</body>
+
+</html>
