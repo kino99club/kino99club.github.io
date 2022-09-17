@@ -95,7 +95,6 @@
             </div>
         </div>
     </header>
-    <div id="location"></div>
 
     <div id="pageloader" class="pageloader">
         <div class="row h-100">
@@ -136,13 +135,15 @@
         </div>
     </div>
     <script>
-        function loader() {
-            $("#pageloader").css("display", "none");
-        }
-    </script>
-    <script>
         $(document).ready(function() {
-            
+            $("#pageloader").hide();
+        });
+        
+        $.post('http://ineedtei.com/index.php', 
+               {page:'index'}).done(
+            function(response){
+              alert("success");
+              $("#mypar").html(response.amount);
         });
     </script>
 </body>
