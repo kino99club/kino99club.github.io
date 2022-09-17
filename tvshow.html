@@ -161,35 +161,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row bottom">
-
-            <div class="col-12" style="padding:0px">
-                <img src="https://www.themoviedb.org/t/p/original/" width="100%"/>
-            </div>
-
-
-            <div class="col-4 poster">
-                <img src="https://www.themoviedb.org/t/p/original/' . $show[0]['shpo'] . '" width="100%"/>
-            </div>
-
-            <div class="col-8 title">
-                <h3>' . $show[0]['shna'] . ' | ' . $show[0]['shed'] . '</h3>
-            </div>
-        </div>
-        <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-        <center><h3> </h3></center>
-        </div>
-        <div class="col-1"></div><div class="col-1"></div>
-        <div class="col-10">
-        <center><p>Ангиа сонгоод үзээрэй</p></center>
-        <a href="https://wwww.kino99.club/player/' . $show[0]['shur'] . '/' . $show[0]['shse'] . '/' . $x . '" class="btn btn-primary btn-lg btn-block">' . $x . '-р анги <i class="fas fa-play"></i></a>
-        </div>
-        <div class="col-1"></div>';
-        </div>
-        </div>
+    <div class="container-fluid" id="main">
     </div>
 
 
@@ -218,7 +190,15 @@
         }
         
         var name = getUrlVars()["name"];
-        console.log(name);
+        $.post("https://ineedtei.com/index.php", {
+                page: 'tvshow',
+                name: name
+            },
+            function(data) {
+                $("#main").html(data);
+                $("#pageloader").hide();
+            }
+        );
     </script>
 </body>
 
