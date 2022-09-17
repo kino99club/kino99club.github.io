@@ -188,6 +188,7 @@
         }
         
         var name = getUrlVars()["name"];
+        $("title").append(name);
         $.post("https://ineedtei.com/index.php", {
                 page: 'tvshow',
                 name: name
