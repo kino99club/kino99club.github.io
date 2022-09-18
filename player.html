@@ -54,7 +54,7 @@
   </style>
 </head>
 
-<body class="bg-dark">
+<body class="bg-dark" onload="getPlayer()">
   <div id="pageloader" class="pageloader">
         <div class="row h-100">
             <div class="col-12 align-self-center">
@@ -75,7 +75,7 @@
   </div>
   <script>
     function getUrlVars()
-        {
+    {
             var vars = [], hash;
             var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
             for(var i = 0; i < hashes.length; i++)
@@ -85,10 +85,11 @@
                 vars[hash[0]] = hash[1];
             }
             return vars;
-        }
+     }
         
         var id = getUrlVars()["id"];
-        $.post("https://ineedtei.com/index.php", {
+    function getPlayer(){
+      $.post("https://ineedtei.com/index.php", {
                 page: 'player',
                 key: id
             },
@@ -97,6 +98,7 @@
                 $("#pageloader").hide();
             }
         );
+    }   
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.7.3/video.min.js"></script>
 </body>
