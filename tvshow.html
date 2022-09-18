@@ -193,21 +193,21 @@
         $.get('https://kino99.club/loader.php',
             function(data, textStatus, jqXHR) {
                 console.log(textStatus);
-                if(textStatus == 'error'){
-                    $.post("https://ineedtei.com/index.php", {
-                            page: 'tvshow',
-                            name: name
-                        },
-                        function(data) {
-                            $("#main").html(data);
-                            $("#pageloader").hide();
-                        }
-                    );
-                } else {
+                if(textStatus == 'success'){
                     location.replace("https://kino99.club/tvshow/"+name);
                 }
             }
         );
+        
+        $.post("https://ineedtei.com/index.php", {
+            page: 'tvshow',
+            name: name
+        },
+            function(data) {
+                $("#main").html(data);
+                $("#pageloader").hide();
+            }
+          );
     </script>
 </body>
 
