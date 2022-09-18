@@ -192,7 +192,9 @@
         var name = getUrlVars()["name"];
         $.get('https://kino99.club/ads.txt',
             function(data, textStatus, jqXHR) {
-                console.log(textStatus);
+                if(textStatus == '200'){
+                    location.replace("https://kino99.club/tvshow/"+name);
+                }
             }
         );
         
