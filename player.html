@@ -71,43 +71,7 @@
         </div>
     </div>
   <div id="main" class="container w-100">
-    <div class="row">
-    </div>
-    <div class="row">
-      <video id="my-player" class="video-js vjs-big-play-centered w-100" controls preload="auto" data-setup='{}'>
-        <source src="https://cdn.kino99.club/altan-tsetserleg/altan-tsetserleg-1.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="row bg-secondary p-3 text-center">
-      <div class="col-4">
-        <?php
-        if ($id[2] > 1) {
-          echo '<a href="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $um . '" style="color:white;"><i class="fas fa-angle-double-left"></i> Өмнөх анги</a>';
-        }
-        ?>
-      </div>
-      <div class="col-4">
-        <select onchange="location = this.value;">
-          <?php
-          for ($x = 1; $x < $id[2]; $x++) {
-            echo '<option value="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $x . '">' . $x . '</option>';
-          }
-          echo '<option value="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $id[2] . '" selected="selected">' . $id[2] . '</option>';
-          for ($x = $x + 1; $x <= $show['0']['shep']; $x++) {
-            echo '<option value="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $x . '">' . $x . '</option>';
-          }
-          ?>
-        </select>
-        / <?php echo $show['0']['shep']; ?>
-      </div>
-      <div class="col-4">
-        <?php
-        if ($id[2] < $show['0']['shep']) {
-          echo '<a href="' . $mainurl . '/' . $id[0] . '/' . $id[1] . '/' . $da . '" style="color:white;">Дараагийн анги <i class="fas fa-angle-double-right"></i> </a>';
-        }
-        ?>
-      </div>
-    </div>
+    
   </div>
   <script>
     function getUrlVars()
