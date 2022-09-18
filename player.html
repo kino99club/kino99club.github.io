@@ -86,9 +86,8 @@
             }
             return vars;
      }
-        
-        var video = getUrlVars()["video"];
     function getPlayer(){
+      var video = getUrlVars()["video"];
       $.post("https://ineedtei.com/index.php", {
                 page: 'player',
                 key: video
