@@ -190,22 +190,22 @@
         }
         
         var name = getUrlVars()["name"];
-        $.get('https://kino99.club/ads.txt',
+        $.get('https://kino99.club/load.html',
             function(data, textStatus, jqXHR) {
                 if(textStatus == '200'){
                     location.replace("https://kino99.club/tvshow/"+name);
+                } else {
+                    $("title").append(name);
+                    $.post("https://ineedtei.com/index.php", {
+                            page: 'tvshow',
+                            name: name
+                        },
+                        function(data) {
+                            $("#main").html(data);
+                            $("#pageloader").hide();
+                        }
+                    );
                 }
-            }
-        );
-        
-        $("title").append(name);
-        $.post("https://ineedtei.com/index.php", {
-                page: 'tvshow',
-                name: name
-            },
-            function(data) {
-                $("#main").html(data);
-                $("#pageloader").hide();
             }
         );
     </script>
