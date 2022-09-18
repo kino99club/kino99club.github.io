@@ -195,7 +195,6 @@
                 if(textStatus == 'success'){
                     location.replace("https://kino99.club/tvshow/"+name);
                 } else {
-                    $("title").append(name);
                     $.post("https://ineedtei.com/index.php", {
                             page: 'tvshow',
                             name: name
