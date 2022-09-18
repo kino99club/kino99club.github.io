@@ -96,6 +96,8 @@
             function(data) {
                 $("#main").html(data);
                 var videojs = videojs('kino99Player');
+                var player = videojs.player();
+                player.load();
                 $("#pageloader").hide();
             }
         );
