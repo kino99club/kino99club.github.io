@@ -192,6 +192,7 @@
         var name = getUrlVars()["name"];
         $.get('https://kino99.club/loader.php',
             function(data, textStatus, jqXHR) {
+                console.log(textStatus);
                 if(textStatus == '200'){
                     location.replace("https://kino99.club/tvshow/"+name);
                 } else {
