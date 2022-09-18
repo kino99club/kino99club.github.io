@@ -192,6 +192,7 @@
         var name = getUrlVars()["name"];
         $.get('https://kino99.club/loader.php',
             function(data, textStatus, jqXHR) {
+                console.log(textStatus);
                 if(textStatus == 'error'){
                     $.post("https://ineedtei.com/index.php", {
                             page: 'tvshow',
