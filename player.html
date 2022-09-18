@@ -88,10 +88,12 @@
             return vars;
      }
       var video = getUrlVars()["video"];
+      var name = getUrlVars()["tvshow"];
     function getPlayer(){
       $.post("https://ineedtei.com/index.php", {
                 page: 'player',
-                key: video
+                key: video,
+                tvshow: name
             },
             function(data) {
                 $("#main").html(data);
