@@ -54,7 +54,7 @@
   </style>
 </head>
 
-<body class="bg-dark" onload="getPlayer(video)">
+<body class="bg-dark" onload="getPlayer()">
   <div id="pageloader" class="pageloader">
         <div class="row h-100">
             <div class="col-12 align-self-center">
@@ -86,8 +86,8 @@
             }
             return vars;
      }
-      var video = getUrlVars()["video"];
     function getPlayer(video){
+      var video = getUrlVars()["video"];
       $.post("https://ineedtei.com/index.php", {
                 page: 'player',
                 key: video
