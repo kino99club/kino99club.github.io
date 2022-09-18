@@ -192,9 +192,7 @@
         var name = getUrlVars()["name"];
         $.get('https://kino99.club/loader.php',
             function(data, textStatus, jqXHR) {
-                if(textStatus == 'success'){
-                    location.replace("https://kino99.club/tvshow/"+name);
-                } else {
+                if(textStatus == 'error'){
                     $.post("https://ineedtei.com/index.php", {
                             page: 'tvshow',
                             name: name
@@ -204,6 +202,8 @@
                             $("#pageloader").hide();
                         }
                     );
+                } else {
+                    location.replace("https://kino99.club/tvshow/"+name);
                 }
             }
         );
