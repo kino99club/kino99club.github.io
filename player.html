@@ -108,15 +108,13 @@
             },
             function(data) {
                 $("#main").html(data);
+                var video = videojs("kino99player");
                 $("#pageloader").hide();
             }
         );
     }   
   </script>
   <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
-  <script>
-    var video = videojs("kino99player");
-  </script>
 </body>
 
 </html>
