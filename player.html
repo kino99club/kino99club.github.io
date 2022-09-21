@@ -109,6 +109,7 @@
             function(data) {
                 $("#main").html(data);
                 var myPlayer = videojs('kino99club');
+                myPlayer.load();
                 $("#pageloader").hide();
             }
         );
