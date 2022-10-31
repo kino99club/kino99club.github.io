@@ -190,16 +190,6 @@
         }
         
         var name = getUrlVars()["name"];
-        $.get('https://kino99.club/loader.php',
-            function(data, textStatus, jqXHR) {
-                console.log(textStatus);
-                if(textStatus == 'success'){
-                    location.replace("https://kino99.club/tvshow/"+name);
-                } else {
-                    console.log(Done);
-                }
-            }
-        );
         
         $.post("https://ineedtei.com/index.php", {
             page: 'tvshow',
