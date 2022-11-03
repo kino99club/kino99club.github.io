@@ -176,6 +176,8 @@
         </div>
     </div>
     <script>
+        getLocation();
+        
         function getUrlVars()
         {
             var vars = [], hash;
@@ -187,6 +189,14 @@
                 vars[hash[0]] = hash[1];
             }
             return vars;
+        }
+        
+        function getLocation()
+        {
+            $.get('https://www.cloudflare.com/cdn-cgi/trace',
+              function (data) {
+                  console.log(data);
+            });
         }
         
         var name = getUrlVars()["name"];
