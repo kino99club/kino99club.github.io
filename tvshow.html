@@ -191,15 +191,19 @@
             return vars;
         }
         
+        var name = getUrlVars()["name"];
+        
         function getLocation()
         {
             $.get('https://www.cloudflare.com/cdn-cgi/trace',
               function (data) {
-                  console.log(data);
+                const trace = data.split("loc=");
+                const location = trace[1].split("tls=");
+              	if(location[0].trim() != "MN"){
+                    location.replace("https://kino99.club/tvshows/" + name + "/");
+                }
             });
         }
-        
-        var name = getUrlVars()["name"];
         
         $.post("https://ineedtei.com/index.php", {
             page: 'tvshow',
