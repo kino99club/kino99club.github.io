@@ -168,10 +168,13 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6 text-left">
                 <a href="https://kino99club.github.io/" style="color:black;">
                     <p class="mb-0">KINO99.club</p>
                 </a>
+            </div>
+            <div class="col-6 text-right">
+                <div id="location"></div>
             </div>
         </div>
     </div>
@@ -199,6 +202,7 @@
               function (data) {
                 const trace = data.split("loc=");
                 const location = trace[1].split("tls=");
+                $("#location").text(location[0].trim());
               	if(location[0].trim() != "MN"){
                     location.replace("https://kino99.club/tvshows/" + name + "/");
                 }
