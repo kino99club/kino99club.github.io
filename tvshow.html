@@ -179,7 +179,6 @@
         </div>
     </div>
     <script>
-        getLocation();
         
         function getUrlVars()
         {
@@ -195,8 +194,9 @@
         }
         
         var name = getUrlVars()["name"];
+        getLocation(name);
         
-        function getLocation()
+        function getLocation(name)
         {
             $.get('https://www.cloudflare.com/cdn-cgi/trace',
               function (data) {
