@@ -204,7 +204,7 @@
                 const location = trace[1].split("tls=");
                 $("#location").text(location[0].trim());
               	if(location[0].trim() != "MN"){
-                    location.replace("https://kino99.club/tvshows/" + name + "/");
+                    window.location.href = "https://kino99.club/tvshows/" + name + "/";
                 }
             });
         }
